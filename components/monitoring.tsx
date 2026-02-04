@@ -16,42 +16,42 @@ export function Monitoring() {
     <div className="w-full border-b border-border bg-surface">
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2">
         {/* Left content */}
-        <div className="p-8 md:p-20 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-border">
-          <div className="font-mono text-xs text-primary mb-4">● LIVE WORKFLOW MONITORING</div>
-          <h2 className="text-3xl font-medium text-white mb-6">See Every Workflow Step</h2>
-          <p className="text-gray-500 mb-8 max-w-md">
+        <div className="p-6 sm:p-8 md:p-12 lg:p-20 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-border">
+          <div className="font-mono text-[10px] sm:text-xs text-primary mb-3 sm:mb-4">● LIVE WORKFLOW MONITORING</div>
+          <h2 className="text-2xl sm:text-3xl font-medium text-white mb-4 sm:mb-6">See Every Workflow Step</h2>
+          <p className="text-sm sm:text-base text-gray-500 mb-6 sm:mb-8 max-w-md">
             Watch your HubSpot workflows execute in real-time. Capture checkpoints at enrollment, branches, and actions to understand exactly what happened.
           </p>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="border border-border p-4 bg-background">
-              <div className="text-xs text-gray-500 font-mono mb-1">WORKFLOWS TRACKED</div>
-              <div className="text-2xl text-white font-mono">1,247</div>
+          <div className="grid grid-cols-2 gap-3 sm:gap-4">
+            <div className="border border-border p-3 sm:p-4 bg-background">
+              <div className="text-[10px] sm:text-xs text-gray-500 font-mono mb-1">WORKFLOWS TRACKED</div>
+              <div className="text-xl sm:text-2xl text-white font-mono">1,247</div>
             </div>
-            <div className="border border-border p-4 bg-background">
-              <div className="text-xs text-gray-500 font-mono mb-1">ISSUES FOUND</div>
-              <div className="text-2xl text-white font-mono">23</div>
+            <div className="border border-border p-3 sm:p-4 bg-background">
+              <div className="text-[10px] sm:text-xs text-gray-500 font-mono mb-1">ISSUES FOUND</div>
+              <div className="text-xl sm:text-2xl text-white font-mono">23</div>
             </div>
           </div>
         </div>
         
         {/* Right terminal */}
-        <div className="bg-background p-8 md:p-12 relative overflow-hidden flex flex-col font-mono text-xs">
-          <div className="flex items-center gap-2 mb-4 border-b border-border pb-2">
-            <div className="size-2 rounded-full bg-red-500/50" />
-            <div className="size-2 rounded-full bg-yellow-500/50" />
-            <div className="size-2 rounded-full bg-green-500/50" />
+        <div className="bg-background p-4 sm:p-6 md:p-8 lg:p-12 relative overflow-hidden flex flex-col font-mono text-[10px] sm:text-xs">
+          <div className="flex items-center gap-2 mb-3 sm:mb-4 border-b border-border pb-2">
+            <div className="size-1.5 sm:size-2 rounded-full bg-red-500/50" />
+            <div className="size-1.5 sm:size-2 rounded-full bg-yellow-500/50" />
+            <div className="size-1.5 sm:size-2 rounded-full bg-green-500/50" />
             <span className="ml-auto text-gray-600">workflow.log</span>
           </div>
-          <div className="space-y-2 text-gray-500 opacity-80 overflow-hidden h-[300px]">
+          <div className="space-y-1.5 sm:space-y-2 text-gray-500 opacity-80 overflow-hidden h-[240px] sm:h-[300px]">
             {logEntries.map((entry, index) => (
-              <div key={index} className="flex gap-4">
-                <span className="text-gray-700">{entry.time}</span>
-                <span className={entry.levelClass}>{entry.level}</span>
-                <span>{entry.message}</span>
+              <div key={index} className="flex gap-2 sm:gap-4">
+                <span className="text-gray-700 shrink-0">{entry.time}</span>
+                <span className={`${entry.levelClass} shrink-0 w-12 sm:w-14`}>{entry.level}</span>
+                <span className="truncate">{entry.message}</span>
               </div>
             ))}
           </div>
-          <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-background to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 h-16 sm:h-20 bg-gradient-to-t from-background to-transparent" />
         </div>
       </div>
     </div>

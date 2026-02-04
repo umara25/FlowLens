@@ -122,15 +122,15 @@ export default function FeaturesPage() {
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur">
-        <div className="flex h-14 items-center justify-between px-6 max-w-7xl mx-auto">
-          <Link href="/" className="text-white font-medium text-sm hover:text-primary transition-colors">
-            ← Back to FlowLens
+        <div className="flex h-12 sm:h-14 items-center justify-between px-3 sm:px-6 max-w-7xl mx-auto">
+          <Link href="/" className="text-white font-medium text-xs sm:text-sm hover:text-primary transition-colors">
+            ← Back
           </Link>
-          <nav className="flex items-center gap-6">
-            <Link href="/docs" className="text-xs text-muted-foreground hover:text-white transition-colors uppercase tracking-widest font-mono">
+          <nav className="flex items-center gap-4 sm:gap-6">
+            <Link href="/docs" className="text-[10px] sm:text-xs text-muted-foreground hover:text-white transition-colors uppercase tracking-widest font-mono">
               Docs
             </Link>
-            <Link href="https://github.com/umara25/FlowLens" target="_blank" className="text-xs text-muted-foreground hover:text-white transition-colors uppercase tracking-widest font-mono">
+            <Link href="https://github.com/umara25/FlowLens" target="_blank" className="text-[10px] sm:text-xs text-muted-foreground hover:text-white transition-colors uppercase tracking-widest font-mono">
               GitHub
             </Link>
           </nav>
@@ -139,11 +139,11 @@ export default function FeaturesPage() {
 
       {/* Hero */}
       <section className="border-b border-border">
-        <div className="max-w-5xl mx-auto px-6 py-20 text-center">
-          <h1 className="text-4xl md:text-5xl font-medium text-white mb-6">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-20 text-center">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-medium text-white mb-4 sm:mb-6">
             Features
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
             Everything you need to understand why your HubSpot workflows aren&apos;t working as expected.
           </p>
         </div>
@@ -151,18 +151,18 @@ export default function FeaturesPage() {
 
       {/* Features Grid */}
       <section className="border-b border-border">
-        <div className="max-w-6xl mx-auto px-6 py-20">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {features.map((feature, index) => (
-              <div key={index} className="bg-surface border border-border p-6 rounded-lg hover:border-primary/50 transition-colors">
-                <div className="text-primary mb-4">
+              <div key={index} className="bg-surface border border-border p-4 sm:p-6 rounded-lg hover:border-primary/50 transition-colors">
+                <div className="text-primary mb-3 sm:mb-4">
                   {feature.icon}
                 </div>
-                <h3 className="text-lg font-medium text-white mb-2">{feature.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4">{feature.description}</p>
-                <ul className="space-y-2">
+                <h3 className="text-base sm:text-lg font-medium text-white mb-2">{feature.title}</h3>
+                <p className="text-muted-foreground text-xs sm:text-sm mb-3 sm:mb-4">{feature.description}</p>
+                <ul className="space-y-1.5 sm:space-y-2">
                   {feature.details.map((detail, i) => (
-                    <li key={i} className="text-xs text-muted-foreground flex items-start gap-2">
+                    <li key={i} className="text-[10px] sm:text-xs text-muted-foreground flex items-start gap-2">
                       <span className="text-primary mt-0.5">•</span>
                       {detail}
                     </li>
@@ -176,18 +176,18 @@ export default function FeaturesPage() {
 
       {/* Use Cases */}
       <section className="border-b border-border">
-        <div className="max-w-5xl mx-auto px-6 py-20">
-          <h2 className="text-2xl font-medium text-white mb-4 text-center">Common Use Cases</h2>
-          <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
+          <h2 className="text-xl sm:text-2xl font-medium text-white mb-3 sm:mb-4 text-center">Common Use Cases</h2>
+          <p className="text-xs sm:text-sm text-muted-foreground text-center mb-8 sm:mb-12 max-w-2xl mx-auto">
             Real scenarios where FlowLens helps you quickly identify and fix workflow issues.
           </p>
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {useCases.map((useCase, index) => (
-              <div key={index} className="bg-surface border border-border p-6 rounded-lg">
-                <h3 className="text-lg font-medium text-white mb-2">{useCase.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4">{useCase.description}</p>
-                <div className="bg-black/50 border border-border/50 p-4 rounded">
-                  <p className="text-sm">
+              <div key={index} className="bg-surface border border-border p-4 sm:p-6 rounded-lg">
+                <h3 className="text-base sm:text-lg font-medium text-white mb-2">{useCase.title}</h3>
+                <p className="text-muted-foreground text-xs sm:text-sm mb-3 sm:mb-4">{useCase.description}</p>
+                <div className="bg-black/50 border border-border/50 p-3 sm:p-4 rounded">
+                  <p className="text-xs sm:text-sm">
                     <span className="text-primary font-medium">FlowLens insight: </span>
                     <span className="text-gray-300">{useCase.solution}</span>
                   </p>
@@ -200,63 +200,63 @@ export default function FeaturesPage() {
 
       {/* How It Works */}
       <section className="border-b border-border">
-        <div className="max-w-5xl mx-auto px-6 py-20">
-          <h2 className="text-2xl font-medium text-white mb-4 text-center">How It Works</h2>
-          <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
+          <h2 className="text-xl sm:text-2xl font-medium text-white mb-3 sm:mb-4 text-center">How It Works</h2>
+          <p className="text-xs sm:text-sm text-muted-foreground text-center mb-8 sm:mb-12 max-w-2xl mx-auto">
             FlowLens integrates seamlessly with your existing HubSpot workflows.
           </p>
           
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             <div className="text-center">
-              <div className="w-12 h-12 bg-primary/20 text-primary rounded-full flex items-center justify-center mx-auto mb-4 text-lg font-bold">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/20 text-primary rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 text-base sm:text-lg font-bold">
                 1
               </div>
-              <h3 className="text-white font-medium mb-2">Instrument</h3>
-              <p className="text-muted-foreground text-sm">Add custom code actions at checkpoints in your workflow</p>
+              <h3 className="text-white font-medium mb-1 sm:mb-2 text-sm sm:text-base">Instrument</h3>
+              <p className="text-muted-foreground text-[10px] sm:text-sm">Add custom code actions at checkpoints</p>
             </div>
             <div className="text-center">
-              <div className="w-12 h-12 bg-primary/20 text-primary rounded-full flex items-center justify-center mx-auto mb-4 text-lg font-bold">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/20 text-primary rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 text-base sm:text-lg font-bold">
                 2
               </div>
-              <h3 className="text-white font-medium mb-2">Execute</h3>
-              <p className="text-muted-foreground text-sm">Run your workflow as normal - logs are captured automatically</p>
+              <h3 className="text-white font-medium mb-1 sm:mb-2 text-sm sm:text-base">Execute</h3>
+              <p className="text-muted-foreground text-[10px] sm:text-sm">Run your workflow - logs are captured</p>
             </div>
             <div className="text-center">
-              <div className="w-12 h-12 bg-primary/20 text-primary rounded-full flex items-center justify-center mx-auto mb-4 text-lg font-bold">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/20 text-primary rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 text-base sm:text-lg font-bold">
                 3
               </div>
-              <h3 className="text-white font-medium mb-2">Query</h3>
-              <p className="text-muted-foreground text-sm">When something goes wrong, call the explain API</p>
+              <h3 className="text-white font-medium mb-1 sm:mb-2 text-sm sm:text-base">Query</h3>
+              <p className="text-muted-foreground text-[10px] sm:text-sm">When something goes wrong, call the API</p>
             </div>
             <div className="text-center">
-              <div className="w-12 h-12 bg-primary/20 text-primary rounded-full flex items-center justify-center mx-auto mb-4 text-lg font-bold">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/20 text-primary rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 text-base sm:text-lg font-bold">
                 4
               </div>
-              <h3 className="text-white font-medium mb-2">Understand</h3>
-              <p className="text-muted-foreground text-sm">Get a clear explanation with evidence and fix suggestions</p>
+              <h3 className="text-white font-medium mb-1 sm:mb-2 text-sm sm:text-base">Understand</h3>
+              <p className="text-muted-foreground text-[10px] sm:text-sm">Get explanations with fix suggestions</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-6">
+      <section className="py-12 sm:py-20 px-4 sm:px-6">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-2xl font-medium text-white mb-4">Ready to debug smarter?</h2>
-          <p className="text-muted-foreground mb-8">
+          <h2 className="text-xl sm:text-2xl font-medium text-white mb-3 sm:mb-4">Ready to debug smarter?</h2>
+          <p className="text-xs sm:text-sm text-muted-foreground mb-6 sm:mb-8">
             Check out the documentation to get started, or view the source on GitHub.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <Link 
               href="/docs"
-              className="inline-flex items-center justify-center h-10 px-6 bg-primary hover:bg-primary/90 text-white font-medium text-sm rounded transition-colors"
+              className="inline-flex items-center justify-center h-9 sm:h-10 px-5 sm:px-6 bg-primary hover:bg-primary/90 text-white font-medium text-sm rounded transition-colors"
             >
               Read Documentation
             </Link>
             <Link 
               href="https://github.com/umara25/FlowLens"
               target="_blank"
-              className="inline-flex items-center justify-center h-10 px-6 bg-transparent hover:bg-white/5 text-white font-medium text-sm border border-border rounded transition-colors"
+              className="inline-flex items-center justify-center h-9 sm:h-10 px-5 sm:px-6 bg-transparent hover:bg-white/5 text-white font-medium text-sm border border-border rounded transition-colors"
             >
               View on GitHub
             </Link>

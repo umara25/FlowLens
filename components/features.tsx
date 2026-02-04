@@ -1,8 +1,8 @@
 export function Features() {
   return (
     <div className="w-full max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-3 border-x border-border bg-background">
-      {/* Unified Debugging */}
-      <div className="group relative flex flex-col border-b md:border-b-0 md:border-r border-border p-8 md:p-12 transition-colors hover:bg-surface">
+      {/* Checkpoint Logging */}
+      <div className="group relative flex flex-col border-b md:border-b-0 md:border-r border-border p-6 sm:p-8 md:p-12 transition-colors hover:bg-surface">
         <div className="mb-8 h-40 w-full flex items-center justify-center bg-surface-highlight/30 border border-border/50 relative overflow-hidden">
           <svg className="w-full h-full p-4" fill="none" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
             <rect fill="#0B0C0E" height="120" width="200" x="0" y="0" />
@@ -30,8 +30,8 @@ export function Features() {
         </p>
       </div>
       
-      {/* Workflow Tracing */}
-      <div className="group relative flex flex-col border-b md:border-b-0 md:border-r border-border p-8 md:p-12 transition-colors hover:bg-surface">
+      {/* Branch Tracing */}
+      <div className="group relative flex flex-col border-b md:border-b-0 md:border-r border-border p-6 sm:p-8 md:p-12 transition-colors hover:bg-surface">
         <div className="mb-8 h-40 w-full flex items-center justify-center bg-surface-highlight/30 border border-border/50 relative overflow-hidden">
           <svg className="w-full h-full p-4" fill="none" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
             <line stroke="#27282F" strokeWidth="1" x1="100" x2="60" y1="60" y2="30" />
@@ -57,8 +57,8 @@ export function Features() {
         </p>
       </div>
       
-      {/* AI Explanation */}
-      <div className="group relative flex flex-col p-8 md:p-12 transition-colors hover:bg-surface">
+      {/* AI Explanations */}
+      <div className="group relative flex flex-col p-6 sm:p-8 md:p-12 transition-colors hover:bg-surface">
         <div className="mb-8 h-40 w-full flex items-center justify-center bg-surface-highlight/30 border border-border/50 relative overflow-hidden">
           <svg className="w-full h-full p-4" fill="none" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
             <line stroke="#27282F" x1="20" x2="180" y1="100" y2="100" />
