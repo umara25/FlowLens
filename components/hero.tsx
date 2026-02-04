@@ -1,12 +1,17 @@
 "use client"
 
-import { Copy } from "lucide-react"
+import { useState } from "react"
+import { Copy, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { RollingText } from "@/components/ui/rolling-text"
 
 export function Hero() {
-  const handleCopy = () => {
-    navigator.clipboard.writeText("git clone https://github.com/umara25/FlowLens.git")
+  const [copied, setCopied] = useState(false)
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText("git clone https://github.com/umara25/FlowLens.git")
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
   }
 
   return (
@@ -33,7 +38,7 @@ export function Hero() {
           <div className="flex items-center border border-border bg-black pl-2 sm:pl-3 pr-1 h-9 sm:h-10 w-full max-w-[420px] sm:max-w-lg group transition-colors hover:border-primary/50">
             <span className="text-primary mr-1 sm:mr-2 font-mono text-sm">$</span>
             <input
-              className="bg-transparent border-none text-gray-300 text-xs sm:text-sm font-mono w-full focus:ring-0 focus:outline-none p-0 placeholder-gray-700"
+              className="bg-transparent border-none text-gray-300 text-xs sm:text-sm font-mono w-full focus:ring-0 focus:outline-none p-0 placeholder-gray-700 cursor-default"
               readOnly
               value="git clone https://github.com/umara25/FlowLens.git"
             />
@@ -41,10 +46,18 @@ export function Hero() {
               variant="ghost"
               size="icon"
               onClick={handleCopy}
-              className="ml-1 sm:ml-2 p-1 sm:p-1.5 hover:bg-white/10 text-gray-500 hover:text-white transition-colors h-7 w-7 sm:h-8 sm:w-8 shrink-0"
+              className={`ml-1 sm:ml-2 p-1 sm:p-1.5 transition-all h-7 w-7 sm:h-8 sm:w-8 shrink-0 rounded cursor-pointer ${
+                copied 
+                  ? "bg-primary/20 text-primary" 
+                  : "text-gray-500 hover:bg-primary/20 hover:text-primary"
+              }`}
             >
-              <Copy className="size-3.5 sm:size-4" />
-              <span className="sr-only">Copy command</span>
+              {copied ? (
+                <Check className="size-3.5 sm:size-4" />
+              ) : (
+                <Copy className="size-3.5 sm:size-4" />
+              )}
+              <span className="sr-only">{copied ? "Copied!" : "Copy command"}</span>
             </Button>
           </div>
         </div>
