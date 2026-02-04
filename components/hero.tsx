@@ -31,7 +31,7 @@ export function Hero() {
         </h1>
         
         <p className="max-w-2xl mx-auto mb-10 text-sm sm:text-base md:text-lg text-gray-500 leading-relaxed font-light">
-          AI-powered workflow debugging for HubSpot. Understand why workflows fail with real-time insights and actionable fixes.
+          Workflow debugging for HubSpot. Understand why workflows fail with real-time insights and actionable fixes.
         </p>
         
         <div className="flex w-full justify-center mb-12 sm:mb-16 px-2">

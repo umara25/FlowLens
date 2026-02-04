@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Features - FlowLens",
-  description: "Explore FlowLens features: checkpoint logging, branch tracing, AI explanations, and more.",
+  description: "Explore FlowLens features: checkpoint logging, branch tracing, smart explanations, and more.",
 }
 
 const features = [
@@ -38,7 +38,7 @@ const features = [
     ]
   },
   {
-    title: "AI-Powered Explanations",
+    title: "Smart Explanations",
     description: "Get plain-English explanations of why your workflow didn't do what you expected, complete with evidence and actionable fix suggestions.",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>

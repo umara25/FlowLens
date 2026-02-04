@@ -9,7 +9,7 @@ const _jetbrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: 'FlowLens',
-  description: 'AI-powered workflow debugging for HubSpot. Understand why workflows fail with real-time insights and actionable fixes.',
+  description: 'Workflow debugging for HubSpot. Understand why workflows fail with real-time insights and actionable fixes.',
 }
 
 export default function RootLayout({

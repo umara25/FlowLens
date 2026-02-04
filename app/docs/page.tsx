@@ -61,7 +61,7 @@ export default function DocsPage() {
           <section id="overview" className="mb-12 sm:mb-16">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium text-white mb-3 sm:mb-4">FlowLens Documentation</h1>
             <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-4 sm:mb-6">
-              FlowLens is an AI-powered workflow debugger for HubSpot. It helps you understand why your workflows 
+              FlowLens is a workflow debugger for HubSpot. It helps you understand why your workflows 
               didn&apos;t behave as expected by capturing checkpoint data and providing intelligent explanations.
             </p>
             <div className="bg-surface border border-border p-4 sm:p-6 rounded-lg">

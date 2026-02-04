@@ -57,7 +57,7 @@ export function Features() {
         </p>
       </div>
       
-      {/* AI Explanations */}
+      {/* Smart Explanations */}
       <div className="group relative flex flex-col p-6 sm:p-8 md:p-12 transition-colors hover:bg-surface">
         <div className="mb-8 h-40 w-full flex items-center justify-center bg-surface-highlight/30 border border-border/50 relative overflow-hidden">
           <svg className="w-full h-full p-4" fill="none" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
@@ -76,7 +76,7 @@ export function Features() {
             </g>
           </svg>
         </div>
-        <h3 className="text-sm font-mono font-medium text-white mb-2 uppercase tracking-wide">AI Explanations</h3>
+        <h3 className="text-sm font-mono font-medium text-white mb-2 uppercase tracking-wide">Smart Explanations</h3>
         <p className="text-sm text-gray-500 leading-relaxed">
           Get plain-English explanations of why your workflow didn&apos;t do what you expected, with actionable fix suggestions.
         </p>

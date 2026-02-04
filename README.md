@@ -1,6 +1,6 @@
 # FlowLens
 
-AI-powered workflow debugging for HubSpot. Understand why workflows fail with real-time insights and actionable fixes.
+Workflow debugging for HubSpot. Understand why workflows fail with real-time insights and actionable fixes.
 
 ## Overview
 
@@ -10,7 +10,7 @@ FlowLens is a debugging tool that helps HubSpot users understand why their workf
 
 - **Checkpoint Logging**: Track workflow execution at critical points (start, branch, action)
 - **Branch Tracing**: Understand which path a workflow took and why
-- **AI Explanations**: Get plain-English explanations of workflow failures with suggested fixes
+- **Smart Explanations**: Get plain-English explanations of workflow failures with suggested fixes
 - **Real-time Monitoring**: View workflow logs as they happen
 - **HMAC Validation**: Secure webhook endpoints with signature verification
 
