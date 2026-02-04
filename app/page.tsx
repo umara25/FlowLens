@@ -3,6 +3,7 @@ import { Hero } from "@/components/hero"
 import { Features } from "@/components/features"
 import { Monitoring } from "@/components/monitoring"
 import { CTA } from "@/components/cta"
+import { Footer } from "@/components/footer"
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <Monitoring />
         <CTA />
       </main>
+      <Footer />
     </div>
   )
 }

@@ -502,11 +502,17 @@ exports.main = async (event, callback) => {
           {/* Footer */}
           <div className="border-t border-border pt-6 sm:pt-8 mt-12 sm:mt-16">
             <p className="text-muted-foreground text-xs sm:text-sm">
-              Built for HubSpot. View the source on{" "}
-              <Link href="https://github.com/umara25/FlowLens" className="text-primary hover:underline" target="_blank">
-                GitHub
+              Built by{" "}
+              <Link 
+                href="https://umarahmer.com" 
+                target="_blank"
+                className="text-white font-medium hover:text-primary transition-colors inline-flex items-center gap-1"
+              >
+                Umar Ahmer
+                <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                </svg>
               </Link>
-              .
             </p>
           </div>
         </main>
