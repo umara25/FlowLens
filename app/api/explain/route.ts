@@ -4,6 +4,18 @@ import { generateExplanation } from '@/lib/explainer'
 
 const HUBSPOT_ACCESS_TOKEN = process.env.HUBSPOT_ACCESS_TOKEN
 
+// CORS headers for cross-origin requests
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'GET, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+}
+
+// Handle preflight requests
+export async function OPTIONS() {
+  return NextResponse.json({}, { headers: corsHeaders })
+}
+
 interface HubSpotDeal {
   id: string
   properties: Record<string, string | null>
@@ -67,7 +79,7 @@ export async function GET(request: NextRequest) {
           ok: false, 
           error: 'Missing required query parameters: portalId, workflowId, dealId' 
         },
-        { status: 400 }
+        { status: 400, headers: corsHeaders }
       )
     }
 
@@ -94,12 +106,12 @@ export async function GET(request: NextRequest) {
         workflowId,
         dealId
       }
-    })
+    }, { headers: corsHeaders })
   } catch (error) {
     console.error('Error generating explanation:', error)
     return NextResponse.json(
       { ok: false, error: 'Internal server error' },
-      { status: 500 }
+      { status: 500, headers: corsHeaders }
     )
   }
 }

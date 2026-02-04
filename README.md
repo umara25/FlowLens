@@ -259,21 +259,35 @@ FlowLens uses rule-based analysis to determine why a workflow may not have execu
 ## Project Structure
 
 ```
-my-app/
-├── app/
-│   ├── api/
-│   │   ├── log/route.ts      # Webhook endpoint for logs
-│   │   └── explain/route.ts  # Explanation endpoint
-│   ├── docs/page.tsx         # Documentation page
-│   ├── features/page.tsx     # Features page
-│   └── page.tsx              # Landing page
-├── components/               # React components
-├── lib/
-│   ├── db.ts                 # SQLite database operations
-│   ├── hmac.ts               # HMAC signature utilities
-│   └── explainer.ts          # Explanation logic
-└── .env.local                # Environment variables
+HubSpot Projec/
+├── my-app/                       # Next.js backend + landing page
+│   ├── app/
+│   │   ├── api/
+│   │   │   ├── log/route.ts      # Webhook endpoint for logs
+│   │   │   └── explain/route.ts  # Explanation endpoint
+│   │   ├── docs/page.tsx         # Documentation page
+│   │   ├── features/page.tsx     # Features page
+│   │   └── page.tsx              # Landing page
+│   ├── components/               # React components
+│   ├── lib/
+│   │   ├── db.ts                 # SQLite database operations
+│   │   ├── hmac.ts               # HMAC signature utilities
+│   │   └── explainer.ts          # Explanation logic
+│   └── .env.local                # Environment variables
+│
+└── hubspot-extension/            # HubSpot UI Extension
+    ├── hubspot.config.yml        # HubSpot CLI config
+    └── src/app/
+        ├── app.json              # Extension definition
+        └── extensions/
+            └── FlowLensCard.jsx  # Sidebar card component
 ```
+
+## HubSpot UI Extension
+
+The `hubspot-extension/` folder contains the HubSpot UI Extension that adds a FlowLens debugging card to Deal records in HubSpot.
+
+See `hubspot-extension/README.md` for setup instructions.
 
 ## License
 

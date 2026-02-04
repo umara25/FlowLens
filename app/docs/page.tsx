@@ -12,6 +12,7 @@ const sections = [
   { id: "installation", title: "Installation" },
   { id: "configuration", title: "Configuration" },
   { id: "instrumentation", title: "Workflow Instrumentation" },
+  { id: "hubspot-extension", title: "HubSpot Sidebar Extension" },
   { id: "api-reference", title: "API Reference" },
   { id: "explanation-logic", title: "Explanation Logic" },
   { id: "troubleshooting", title: "Troubleshooting" },
@@ -66,10 +67,11 @@ export default function DocsPage() {
             <div className="bg-surface border border-border p-4 sm:p-6 rounded-lg">
               <h3 className="text-xs sm:text-sm font-mono uppercase tracking-wide text-primary mb-2">How it works</h3>
               <ol className="list-decimal list-inside space-y-2 text-xs sm:text-sm text-muted-foreground">
+                <li>Deploy the FlowLens backend (API + database)</li>
                 <li>Add custom code actions to your HubSpot workflow at key checkpoints</li>
                 <li>These actions send execution data to the FlowLens API</li>
-                <li>When something goes wrong, query the explain endpoint</li>
-                <li>Get a plain-English explanation with evidence and fix suggestions</li>
+                <li>Install the HubSpot sidebar extension to view debugging from Deal records</li>
+                <li>Click &quot;Explain&quot; to get a plain-English explanation with evidence and fix suggestions</li>
               </ol>
             </div>
           </section>
@@ -109,13 +111,22 @@ HUBSPOT_ACCESS_TOKEN=your-hubspot-private-app-token`}
               </div>
 
               <div>
-                <h3 className="text-base sm:text-lg text-white mb-2">4. Debug</h3>
-                <p className="text-sm text-muted-foreground mb-3">When a workflow doesn&apos;t work as expected, call the explain endpoint.</p>
+                <h3 className="text-base sm:text-lg text-white mb-2">4. Install HubSpot Extension</h3>
+                <p className="text-sm text-muted-foreground mb-3">Deploy the sidebar card to HubSpot (see HubSpot Sidebar Extension section).</p>
                 <pre className="bg-black border border-border p-3 sm:p-4 rounded-lg overflow-x-auto text-xs sm:text-sm">
                   <code className="font-mono text-gray-300">
-{`GET /api/explain?portalId=123&workflowId=456&dealId=789`}
+{`cd hubspot-extension
+hs auth
+hs project upload`}
                   </code>
                 </pre>
+              </div>
+
+              <div>
+                <h3 className="text-base sm:text-lg text-white mb-2">5. Debug</h3>
+                <p className="text-sm text-muted-foreground mb-3">
+                  Open a Deal in HubSpot, find the FlowLens card in the sidebar, and click &quot;Explain&quot; to analyze the workflow.
+                </p>
               </div>
             </div>
           </section>
@@ -302,6 +313,72 @@ exports.main = async (event, callback) => {
 };`}
               </code>
             </pre>
+          </section>
+
+          {/* HubSpot Sidebar Extension */}
+          <section id="hubspot-extension" className="mb-12 sm:mb-16">
+            <h2 className="text-xl sm:text-2xl font-medium text-white mb-3 sm:mb-4 pb-2 border-b border-border">HubSpot Sidebar Extension</h2>
+            <p className="text-sm text-muted-foreground mb-4 sm:mb-6">
+              The HubSpot UI Extension adds a FlowLens debugging card directly inside HubSpot Deal records, allowing you to debug workflows without leaving HubSpot.
+            </p>
+
+            <h3 className="text-base sm:text-lg text-white mb-2 sm:mb-3">Prerequisites</h3>
+            <ul className="list-disc list-inside text-sm text-muted-foreground mb-4 sm:mb-6 space-y-1">
+              <li>HubSpot CLI installed globally</li>
+              <li>A HubSpot developer account</li>
+              <li>FlowLens backend deployed and accessible</li>
+            </ul>
+
+            <h3 className="text-base sm:text-lg text-white mb-2 sm:mb-3">1. Install HubSpot CLI</h3>
+            <pre className="bg-black border border-border p-3 sm:p-4 rounded-lg overflow-x-auto mb-4 sm:mb-6 text-xs sm:text-sm">
+              <code className="font-mono text-gray-300">
+{`npm install -g @hubspot/cli`}
+              </code>
+            </pre>
+
+            <h3 className="text-base sm:text-lg text-white mb-2 sm:mb-3">2. Authenticate with HubSpot</h3>
+            <pre className="bg-black border border-border p-3 sm:p-4 rounded-lg overflow-x-auto mb-4 sm:mb-6 text-xs sm:text-sm">
+              <code className="font-mono text-gray-300">
+{`hs auth`}
+              </code>
+            </pre>
+            <p className="text-xs sm:text-sm text-muted-foreground mb-4 sm:mb-6">
+              Follow the prompts to authenticate with your HubSpot account.
+            </p>
+
+            <h3 className="text-base sm:text-lg text-white mb-2 sm:mb-3">3. Clone and Configure Extension</h3>
+            <pre className="bg-black border border-border p-3 sm:p-4 rounded-lg overflow-x-auto mb-4 sm:mb-6 text-xs sm:text-sm">
+              <code className="font-mono text-gray-300">
+{`git clone https://github.com/umara25/FlowLens.git
+cd FlowLens/hubspot-extension
+
+# Edit src/app/extensions/FlowLensCard.jsx
+# Update FLOWLENS_API_URL to your deployed URL
+# Update workflowId to your workflow ID`}
+              </code>
+            </pre>
+
+            <h3 className="text-base sm:text-lg text-white mb-2 sm:mb-3">4. Deploy to HubSpot</h3>
+            <pre className="bg-black border border-border p-3 sm:p-4 rounded-lg overflow-x-auto mb-4 sm:mb-6 text-xs sm:text-sm">
+              <code className="font-mono text-gray-300">
+{`# For development (watches for changes)
+hs project dev
+
+# For production deployment
+hs project upload`}
+              </code>
+            </pre>
+
+            <h3 className="text-base sm:text-lg text-white mb-2 sm:mb-3">Using the Extension</h3>
+            <div className="bg-surface border border-border p-4 sm:p-6 rounded-lg">
+              <ol className="list-decimal list-inside space-y-2 text-xs sm:text-sm text-muted-foreground">
+                <li>Open any Deal record in HubSpot</li>
+                <li>Find the &quot;FlowLens&quot; card in the sidebar</li>
+                <li>Optionally enter what you expected to happen</li>
+                <li>Click &quot;Explain&quot; to analyze the workflow execution</li>
+                <li>View the likely cause, evidence, and suggested fixes</li>
+              </ol>
+            </div>
           </section>
 
           {/* API Reference */}
