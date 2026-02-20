@@ -17,8 +17,8 @@ export function Hero() {
   return (
     <div className="relative w-full border-b border-border">
       <div className="absolute inset-0 grid-bg pointer-events-none" />
-      <div className="relative z-10 px-4 sm:px-6 py-16 sm:py-20 md:py-32 flex flex-col items-center text-center max-w-5xl mx-auto">
-        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-medium tracking-tight text-white mb-6 text-balance">
+      <div className="relative z-10 px-4 sm:px-6 py-12 sm:py-14 md:py-20 flex flex-col items-center text-center max-w-5xl mx-auto">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-white mb-4 text-balance">
           <RollingText 
             text="Debug your HubSpot workflows."
             className="font-medium"
@@ -34,7 +34,7 @@ export function Hero() {
           Workflow debugging for HubSpot. Understand why workflows fail with real-time insights and actionable fixes.
         </p>
         
-        <div className="flex w-full justify-center mb-12 sm:mb-16 px-2">
+        <div className="flex w-full justify-center mb-8 sm:mb-10 px-2">
           <div className="flex items-center border border-border bg-black pl-2 sm:pl-3 pr-1 h-9 sm:h-10 w-full max-w-[420px] sm:max-w-lg group transition-colors hover:border-primary/50">
             <span className="text-primary mr-1 sm:mr-2 font-mono text-sm">$</span>
             <input
